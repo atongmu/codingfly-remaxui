@@ -1,0 +1,42 @@
+@import '../../style/theme/index';
+
+$switch-prefix-cls: #{$cui-prefix}-switch;
+
+.#{$switch-prefix-cls} {
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  width: 2em;
+  height: 1em;
+  font-size: 28px;
+  background-color: $fill-base;
+  border: 1Px solid rgba(0, 0, 0, 0.1);
+  border-radius: 28px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    background-color: $fill-base;
+    border-radius: 100%;
+    box-shadow:0 3px 1px 0 rgba(0, 0, 0, 0.05),0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.3, 1.05, 0.4, 1.05);
+  }
+
+  &-checked {
+    background-color: $brand-primary;
+    .#{$switch-prefix-cls}-checkbox {
+      transform: translateX(calc(2em - 1em));
+    }
+  }
+  &-disabled {
+    cursor: not-allowed;
+    opacity: $opacity-disabled;
+  }
+}
+
+

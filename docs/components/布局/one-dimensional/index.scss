@@ -1,0 +1,40 @@
+.space {
+  height: 80px;
+  width: 100%;
+}
+
+.one {
+  .cui-row {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+
+    .cui-col {
+      height: 88px;
+      line-height: 88px;
+      text-align: center;
+      font-size: 28px;
+
+      >view {
+        background-color: #108ee9;
+      }
+
+      >div {
+        background-color: #108ee9;
+      }
+    }
+  }
+
+
+  .demo-basic {
+    .cui-row {
+      .cui-col {
+        background-color: #108ee9;
+
+        &:nth-child(2n) {
+          background-color: #0e80d2;
+        }
+      }
+    }
+  }
+}

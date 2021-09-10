@@ -1,0 +1,36 @@
+.space{
+  height: 80px;
+  width: 100%;
+}
+
+.demo-grid{
+  .cui-grid {
+    border-radius: 16px;
+    overflow: hidden;
+    .cui-row {
+      border-radius: 0;
+      overflow: hidden;
+      margin-bottom: 0;
+      .cui-col {
+        height: auto;
+        line-height: 88px;
+        text-align: center;
+        font-size: 28px;
+        >view {
+          background-color: #108ee9;
+        }
+        >div {
+          background-color: #0e80d2;
+        }
+      }
+    }
+  }
+}
+
+.demo-grid-item{
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}

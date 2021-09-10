@@ -1,0 +1,67 @@
+@import '../../style/theme/index';
+
+$selector-prefix-cls: #{$cui-prefix}-selector;
+
+.#{$selector-prefix-cls} {
+  display: flex;
+  text-align: left;
+  &-parent{
+    width: 280px;
+    background-color: $fill-body;
+  }
+  &-children{
+    flex: 1;
+  }
+  &-option{
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 30px;
+    height: 88px;
+    line-height: 88px;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    &-rounded_bottom{
+      position: absolute;
+      bottom: -12px;
+      right: 0;
+      width: 12px;
+      height: 12px;
+      background-color: $fill-base;
+      overflow: hidden;
+      &-circle{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        left: -12px;
+        right: -12px;
+        background-color: $fill-body;
+      }
+    }
+    &-rounded_top{
+      position: absolute;
+      top: -12px;
+      right: 0;
+      width: 12px;
+      height: 12px;
+      background-color: $fill-base;
+      overflow: hidden;
+      transform: rotate(90deg);
+      &-circle{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        left: -12px;
+        right: -12px;
+        background-color: $fill-body;
+      }
+    }
+  }
+  &-active{
+    color: $brand-primary;
+    font-weight: 500;
+    background-color: $fill-base;
+  }
+}

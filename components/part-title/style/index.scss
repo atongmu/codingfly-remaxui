@@ -1,0 +1,29 @@
+@import '../../style/theme/index.scss';
+
+$part-prefix-cls: #{$cui-prefix}-part-title;
+
+.#{$part-prefix-cls} {
+  flex: 1 1 0%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  display: flex;
+  box-sizing: border-box;
+
+  &-title {
+    height: 32px;
+    line-height: 32px;
+    color: $color-text-base;
+    font-size: 32px;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+
+  &-block {
+    width: 10px;
+    height: 32px;
+    background: $brand-primary;
+  }
+
+}

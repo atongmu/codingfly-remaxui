@@ -1,0 +1,86 @@
+@import '../../style/theme/index.scss';
+
+$box-prefix-cls: #{$cui-prefix}-box;
+
+.#{$box-prefix-cls} {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  cursor: pointer;
+
+  &-border {
+    border: 1px solid #e8e8e8;
+  }
+  &-shape {
+    padding: 0 30px;
+    border-radius: 12px;
+  }
+
+  &-block {
+    &-block {
+      display: block;
+    }
+    &-flex {
+      display: flex;
+    }
+    &-inline-block {
+      display: inline-block;
+    }
+  }
+
+  &-text {
+    &-left {
+      text-align: left;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-right {
+      text-align: right;
+    }
+  }
+
+  &-align {
+    &-center {
+      align-items: center;
+    }
+
+    &-start {
+      align-items: flex-start;
+    }
+
+    &-end {
+      align-items: flex-end;
+    }
+
+    &-baseline {
+      align-items: baseline;
+    }
+  }
+
+  &-justify {
+    &-start {
+      justify-content: flex-start;
+    }
+
+    &-end {
+      justify-content: flex-end;
+    }
+
+    &-center {
+      justify-content: center;
+    }
+
+    &-between {
+      justify-content: space-between;
+    }
+
+    &-around {
+      justify-content: space-around;
+    }
+  }
+}

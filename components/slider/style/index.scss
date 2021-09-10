@@ -1,0 +1,40 @@
+@import "../../style/theme/index";
+
+$slider-prefix-cls: #{$cui-prefix}-slider;
+
+.#{$slider-prefix-cls} {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &-rail {
+    width: 100%;
+    background-color: $fill-base;
+  }
+
+  &-track {
+    background-color: $brand-primary;
+  }
+
+  &-rail,
+  &-track {
+    position: absolute;
+    height: 4px;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+  }
+
+  &-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: $fill-base;
+    border: 2px solid $brand-primary;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color .3s, box-shadow .6s, transform .3s cubic-bezier(.18, .89, .32, 1.28), -webkit-box-shadow .6s, -webkit-transform .3s cubic-bezier(.18, .89, .32, 1.28);
+    transform: translateX(-50%);
+  }
+}

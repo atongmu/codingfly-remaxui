@@ -1,0 +1,163 @@
+@import '../../style/theme/index';
+
+$loading-prefix-cls: #{$cui-prefix}-loading;
+
+.#{$loading-prefix-cls} {
+  position: relative;
+  color: $color-text-placeholder;
+  font-size: 0;
+  vertical-align: middle;
+  display: inline-block;
+
+  &-content {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 1em;
+    max-width: 100%;
+    height: 1em;
+    font-size: 28px;
+    max-height: 100%;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1Px solid $fill-base;
+    border-bottom-color: transparent;
+    animation: loading .8s linear infinite;
+
+  }
+
+  &-gap {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #999;
+    background-color: transparent;
+    animation: loading .6s linear infinite;
+    overflow: hidden;
+
+    &-fill {
+      position: absolute;
+      left: 50%;
+      right: 0;
+      top: 50%;
+      margin-top: -5px;
+      height: 10px;
+      background-color: $fill-base;
+    }
+  }
+
+  &-wave view,
+  &-wave div {
+    width: 6px;
+    height: 40px;
+    background-color: #999;
+    border-radius: 2px;
+    display: inline-block;
+    margin-right: 6px;
+
+    &:nth-child(1) {
+      animation: loaderWave 0.5s -0.3s ease-in-out infinite alternate;
+    }
+
+    &:nth-child(2) {
+      animation: loaderWave 0.5s -0.25s ease-in-out infinite alternate;
+    }
+
+    &:nth-child(3) {
+      animation: loaderWave 0.5s -0.2s ease-in-out infinite alternate;
+    }
+
+    &:nth-child(4) {
+      animation: loaderWave 0.5s -0.1s ease-in-out infinite alternate;
+    }
+
+    &:nth-child(5) {
+      animation: loaderWave 0.5s 0s ease-in-out infinite alternate;
+      margin-right: 0;
+    }
+  }
+
+
+  &-text {
+    display: inline-block;
+    margin-left: 8px;
+    color: $color-text-caption;
+    font-size: 28px;
+    vertical-align: middle;
+  }
+
+  &-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cui-loading-text {
+      padding: 10px 0 0;
+    }
+  }
+
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderWave {
+  0% {
+    -webkit-transform: scale(1, 0.3);
+  }
+
+  100% {
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+@keyframes loaderAnna-1 {
+  33.333% {
+    -webkit-transform: translate(20px, -35px);
+  }
+
+  66.666% {
+    -webkit-transform: translate(40px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@keyframes loaderAnna-2 {
+  33.333% {
+    -webkit-transform: translate(20px, 35px);
+  }
+
+  66.666% {
+    -webkit-transform: translate(-20px, 35px);
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@keyframes loaderAnna-3 {
+  33.333% {
+    -webkit-transform: translate(-40px, 0);
+  }
+
+  66.666% {
+    -webkit-transform: translate(-20px, -35px);
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}

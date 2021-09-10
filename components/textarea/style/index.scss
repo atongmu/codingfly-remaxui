@@ -1,0 +1,20 @@
+@import '../../style/theme/index';
+
+$textarea-prefix-cls: #{$cui-prefix}-textarea;
+
+.#{$textarea-prefix-cls} {
+  &-default{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 28px;
+    color: $color-text-base;
+    // background-color: $light-base;
+    outline: none;
+    resize: none;
+    border: none;
+  }
+  &-placeholder{
+    font-size: 28px;
+  }
+}

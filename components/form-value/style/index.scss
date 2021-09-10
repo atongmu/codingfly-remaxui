@@ -1,0 +1,13 @@
+@import '../../style/theme/index';
+
+$form-value-prefix-cls: #{$cui-prefix}-form-value;
+
+.#{$form-value-prefix-cls} {
+  min-height: 42px;
+  font-size: 28px;
+  color: $color-text-placeholder;
+  text-align: left;
+  &-placeholder {
+    color: $color-text-placeholder;
+  }
+}

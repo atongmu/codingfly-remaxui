@@ -1,0 +1,15 @@
+@import '../../style/theme/index';
+
+$form-item-prefix-cls: #{$cui-prefix}-form-item;
+
+.#{$form-item-prefix-cls} {
+  &-explain {
+    font-size: 24px;
+    color: $brand-important;
+    height: 60px;
+    line-height: 1;
+    padding: 0 20px;
+    transition: height 0.3s;
+    text-align: left;
+  }
+}

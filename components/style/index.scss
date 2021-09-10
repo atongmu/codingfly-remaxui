@@ -1,0 +1,75 @@
+@import './reset/index.scss';
+@import './reset/animation.scss';
+@import './mixins/hairline.scss';
+@import './mixins/clearfix.scss';
+@import './mixins/ellipsis.scss';
+@import './theme/index.scss';
+
+.cui-clearfix {
+  @include clearfix();
+}
+
+.cui-ellipsis {
+  @include ellipsis();
+}
+
+.cui-multi-ellipsis-l2 {
+  @include multi-ellipsis(2);
+}
+
+.cui-multi-ellipsis-l3 {
+
+  @include multi-ellipsis(3);
+}
+
+.cui-safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+[class*='cui-hairline'] {
+  &::after {
+    @include hairline();
+  }
+}
+
+.cui-hairline {
+
+  &,
+  &-top,
+  &-left,
+  &-right,
+  &-bottom,
+  &-surround,
+  &-top-bottom {
+    position: relative;
+  }
+
+  &-top::after {
+    border-top-width: 1Px;
+  }
+
+  &-left::after {
+    border-left-width: 1Px;
+  }
+
+  &-right::after {
+    border-right-width: 1Px;
+  }
+
+  &-bottom::after {
+    border-bottom-width: 1Px;
+  }
+
+  &,
+  &-unset {
+    &--top-bottom::after {
+      border-width: 1Px 0;
+    }
+  }
+
+  &-surround::after {
+    border-width: 1Px;
+  }
+}
+
