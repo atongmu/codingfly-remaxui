@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { tuple } from '../_utils';
 import { getPrefixCls } from '../common';
 import Loading from '../loading';
+import Icon from '../icon';
 
 const prefixCls = getPrefixCls('btn');
 
@@ -90,6 +91,16 @@ const AButton = (props: ButtonProps): React.ReactElement => {
       if (color) {
         iconColor = color;
       }
+    }
+    if (typeof icon === 'string') {
+      return (
+        <Icon
+          type={icon}
+          color={iconColor}
+          size={iconSize}
+          style={{ verticalAlign: '-0.05em', marginRight: childrenElement ? '6px' : undefined }}
+        />
+      );
     }
     if (React.isValidElement(icon)) {
       return {

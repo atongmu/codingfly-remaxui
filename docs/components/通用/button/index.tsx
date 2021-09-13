@@ -196,8 +196,8 @@ export default () => {
             <Button look="dark">Dark</Button>
           </View>
           <View className={styles.group}>
-            <Button size="large" block look="anna" style={{ marginBottom: '30px' }}>
-              Anna
+            <Button size="large" block style={{ marginBottom: '30px' }}>
+              my
             </Button>
             <Button size="large" shape="square" block look="orange">
               Orange

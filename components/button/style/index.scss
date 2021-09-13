@@ -11,7 +11,7 @@ $large-height: 80px;
   padding: 0 32px;
   background-color: $fill-base;
   height: 88px;
-  line-height: 60px;
+  line-height: 88px;
   border: 1px solid $fill-disabled;
   border-radius: 4px;
   color: $color-text-base;
@@ -187,11 +187,6 @@ $large-height: 80px;
       color: $fill-base;
       background-color: #222428;
       border-color: #222428;
-    }
-    &-anna {
-      color: $fill-base;
-      background-color: #ff7777;
-      border-color: #ff7777;
     }
     &-orange {
       color: $fill-base;
