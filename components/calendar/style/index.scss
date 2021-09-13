@@ -15,6 +15,7 @@ $calendar-prefix-cls: #{$cui-prefix}-calendar;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1Px solid $border-color-base;
   }
 
   &-title {
@@ -36,6 +37,7 @@ $calendar-prefix-cls: #{$cui-prefix}-calendar;
     font-weight: 400;
     color: #606060;
     line-height: 40px;
+    padding: 20px 10px;
   }
 
 
@@ -46,14 +48,15 @@ $calendar-prefix-cls: #{$cui-prefix}-calendar;
       display: inline-block;
       width: calc(100% / 7);
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 8px;
+      border-radius: 10px;
 
       .day {
         font-size: 32px;
         font-weight: 500;
         color: #303030;
         text-align: center;
-        padding: 10px;
+        padding: 20px 10px;
       }
 
       .desc {
@@ -66,13 +69,14 @@ $calendar-prefix-cls: #{$cui-prefix}-calendar;
     }
 
     .active {
-      background-color: $brand-error;
+      background-color: rgba(251, 96, 82, 0.2) !important;
 
       .day {
-        color: $color-text-base-inverse;
+        color: $brand-error !important;
       }
 
     }
+
     .now {
       background-color: $brand-primary;
 
@@ -80,6 +84,20 @@ $calendar-prefix-cls: #{$cui-prefix}-calendar;
         color: $color-text-base-inverse;
       }
 
+    }
+
+    .disable {
+
+      .day {
+        color: $color-text-disabled;
+      }
+
+    }
+
+    .day_off {
+      .day {
+        color: $brand-error;
+      }
     }
   }
 

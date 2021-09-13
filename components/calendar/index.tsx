@@ -2,7 +2,7 @@
  * @Author: codingfly
  * @Description:
  * @Date: 2021-08-13 14:34:13
- * @LastEditTime: 2021-09-10 16:19:28
+ * @LastEditTime: 2021-09-13 10:13:16
  * @FilePath: \my-remax-ui\components\calendar\index.tsx
  */
 import React, { useEffect, useRef, useState } from 'react';
@@ -12,7 +12,6 @@ import { getPrefixCls } from './../common';
 import Button from '../button';
 import Popup from '../popup';
 import Icon from '../icon';
-const moment = require('moment');
 const prefixCls = getPrefixCls('calendar');
 
 export interface CalendarProps {
@@ -20,7 +19,6 @@ export interface CalendarProps {
   show?: boolean;
   showTitle?: boolean;
   showSubtitle?: boolean;
-  firstDayOfWeek?: number | undefined;
   confirmText?: string;
   rangePrompt?: string;
   defaultDate?: string;
@@ -29,17 +27,17 @@ export interface CalendarProps {
   poppable?: boolean;
   extra?: React.ReactNode;
   extraWidth?: string | number;
+  showFoot?: boolean;
   foot?: React.ReactNode;
   cover?: React.ReactNode;
   text?: string;
   position?: string;
   shadow?: boolean;
-  className: string;
-  style?: React.CSSProperties;
   contentStyle?: React.CSSProperties;
   children?: React.ReactNode;
   onClose?: () => void;
-  onChange: (e: any) => void;
+  onTap?: (e: any) => void;
+  onChange?: (e: any) => void;
 }
 
 const Calendar = (props: CalendarProps) => {
@@ -47,11 +45,13 @@ const Calendar = (props: CalendarProps) => {
     confirmText = '确定',
     show,
     type = "single",
+    showFoot = false,
     poppable = true,
     defaultDate,
     minDate,
     maxDate,
     position = 'bottom',
+    onTap,
     onChange,
     onClose,
   } = props;
@@ -65,6 +65,7 @@ const Calendar = (props: CalendarProps) => {
   const [currentDate, setcurrentDate] = useState<Date>(new Date());
   const [tag, setTag] = useState(false);
   const [change, setChange] = useState<any>([])
+
   //获取当前月份
   const getMonth = (date: Date): number => {
     return date.getMonth();
@@ -96,6 +97,8 @@ const Calendar = (props: CalendarProps) => {
     const now_date = new Date()
     let is_now = false  //今天
     let is_change = false //选中
+    let is_disable = false //禁用
+    let day_off = false //休息日
 
     var number = line * 7 + weekIndex - weekDay + 1
     if (number <= 0 || number > monthDays) {
@@ -105,7 +108,7 @@ const Calendar = (props: CalendarProps) => {
       is_now = true
     }
 
-    const new_day = `${currentDate.getFullYear()}-${formatNumber(month)}-${number}`
+    const new_day = `${currentDate.getFullYear()}-${formatNumber(month)}-${number < 10 ? `0${number}` : number}`
 
     if (!is_change) {
       for (let i = 0; i < change.length; i++) {
@@ -116,12 +119,40 @@ const Calendar = (props: CalendarProps) => {
         }
       }
     }
+    if (minDate || maxDate) {
+      let min_date, max_date;
+      const now_date = new Date(new_day)
+      if (minDate) {
+        min_date = new Date(minDate)
+        if (min_date > now_date) {
+          is_disable = true
+        }
+      }
+      if (maxDate) {
+        max_date = new Date(maxDate)
+        if (max_date < now_date) {
+          is_disable = true
+        }
+      }
+    }
+    if (weekIndex === 6 || weekIndex === 0) {
+      day_off = true
+    }
+
     return (
       <View className={classNames("day-c", {
         ["now"]: is_now,
-        ["active"]: is_change
+        ["active"]: is_change,
+        ["disable"]: is_disable,
+        ["day_off"]: day_off
       })} key={weekIndex}>
         <View className="day" onTap={() => {
+          if (is_disable) {
+            return
+          }
+          if (onTap) {
+            onTap(new_day)
+          }
           if (type === 'single') {
             setChange([new_day])
           }
@@ -146,12 +177,12 @@ const Calendar = (props: CalendarProps) => {
       setTag(true)
     }
 
-    var monthAfter = month + monthChanged
-    var date = getDateByYearMonth(year, monthAfter)
+    const monthAfter = month + monthChanged
+    const date = getDateByYearMonth(year, monthAfter)
     setCurrentYearMonth(date)
   }
   const formatNumber = (num: number): string => {
-    var _num = num + 1
+    const _num = num + 1
     return _num < 10 ? `0${_num}` : `${_num}`
   }
 
@@ -175,10 +206,15 @@ const Calendar = (props: CalendarProps) => {
 
 
   const renderFoot = () => {
+    if (!showFoot) {
+      return null
+    }
     return (
       <View className={`${prefixCls}-footer`}>
         <Button block type="primary" className={`${prefixCls}-confirm`} onTap={() => {
-          onChange(change)
+          if (onChange) {
+            onChange(change)
+          }
         }}>
           {confirmText}
         </Button>
@@ -245,7 +281,7 @@ const Calendar = (props: CalendarProps) => {
           onClose={() => {
             onClose?.();
           }}
-          style={{ height: '75%' }}
+          style={{ height: showFoot ? '75%' : '62%' }}
         >
           {renderCalendar()}
         </Popup>
