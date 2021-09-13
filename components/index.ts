@@ -2,7 +2,7 @@
  * @Author: codingfly
  * @Description:
  * @Date: 2021-08-04 11:04:26
- * @LastEditTime: 2021-09-09 15:41:59
+ * @LastEditTime: 2021-09-13 11:53:00
  * @FilePath: \my-remax-ui\components\index.ts
  */
 
@@ -45,6 +45,8 @@ export { default as Popup } from './popup';
 export { default as Card } from './card';
 
 export { default as Empty } from './empty';
+
+export { default as NoticeBar } from './notice-bar';
 
 export { default as Steps } from './steps';
 

@@ -1,0 +1,29 @@
+@import '../../style/theme/index.scss';
+@import '../../swiper/style/index.scss';
+
+$box-prefix-cls: #{$cui-prefix}-notice-bar;
+
+.#{$box-prefix-cls} {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 28px;
+  line-height: 28px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  padding: 0 10px;
+
+  &-title {
+    padding: 0 8px;
+  }
+
+  &-content {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .cui-swiper-item {
+    display: flex;
+    align-items: center;
+  }
+}
