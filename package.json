@@ -51,7 +51,6 @@
     "@babel/runtime": "^7.10.1",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.23",
-    "moment": "^2.29.1",
     "rmc-notification": "^1.0.0"
   },
   "devDependencies": {
