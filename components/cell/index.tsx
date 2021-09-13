@@ -103,7 +103,7 @@ const Cell = (props: CellProps) => {
           <View className={`${prefixCls}__left-label`}>
             {label}
             {description ? (
-              <View className={`${prefixCls}-container-description`}>
+              <View className={`${prefixCls}-description`}>
                 {description}
               </View>
             ) : null}
