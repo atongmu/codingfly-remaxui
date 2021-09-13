@@ -2,7 +2,7 @@
  * @Author: codingfly
  * @Description: 
  * @Date: 2021-08-27 14:28:39
- * @LastEditTime: 2021-09-09 14:43:42
+ * @LastEditTime: 2021-09-13 15:48:33
  * @FilePath: \my-remax-ui\.umirc.ts
  */
 import { defineConfig } from 'dumi';
@@ -24,7 +24,6 @@ export default defineConfig({
   exportStatic: {},
   navs: [
     null,
-    { title: 'GitHub', path: 'https://github.com/my/my' },
   ],
   theme: {
     '@c-primary': '#108ee9',

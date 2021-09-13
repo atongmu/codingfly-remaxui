@@ -2,8 +2,8 @@
  * @Author: codingfly
  * @Description: 
  * @Date: 2021-08-27 14:00:34
- * @LastEditTime: 2021-09-08 11:48:04
- * @FilePath: \annar-master\README.md
+ * @LastEditTime: 2021-09-13 15:29:31
+ * @FilePath: \my-remax-ui\README.md
 -->
 
 <h1 align="center">@codingfly/remaxui</h1>
@@ -40,6 +40,14 @@ const App = () => (
   </>
 );
 ```
+
+
+在 `app.js` 中引入样式：
+
+```jsx
+import '@codingfly/remaxui/dist/my.css';
+```
+
 
 #### Pull Request 规范
 
