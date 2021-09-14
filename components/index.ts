@@ -2,7 +2,7 @@
  * @Author: codingfly
  * @Description:
  * @Date: 2021-08-04 11:04:26
- * @LastEditTime: 2021-09-13 11:53:00
+ * @LastEditTime: 2021-09-14 14:34:44
  * @FilePath: \my-remax-ui\components\index.ts
  */
 
@@ -66,6 +66,9 @@ export { default as Swiper } from './swiper';
 
 export { default as SwipeAction } from './swipe-action';
 
+export { default as Tabs } from './tabs';
+
+
 // 反馈
 
 export { default as ActionSheet } from './action-sheet';
@@ -105,3 +108,5 @@ export { default as Textarea } from './textarea';
 // 工具
 
 export { default as Validate } from './validate';
+
+export { default as Tools } from './tools';

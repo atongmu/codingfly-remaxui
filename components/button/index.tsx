@@ -50,7 +50,7 @@ const AButton = (props: ButtonProps): React.ReactElement => {
     block,
     float,
     loading,
-    loadingColor="#fdfdfd",
+    loadingColor = "#fdfdfd",
     loadingText,
     plain,
     hairline,
@@ -152,15 +152,17 @@ const AButton = (props: ButtonProps): React.ReactElement => {
       }}
       {...restProps}
     >
-      {loading ? (
-        <View className={`${prefixCls}-loading-icon`}>
-          <Loading color={loadingColor} style={{ verticalAlign: '-0.3em' }} />
-        </View>
-      ) : (
-        iconElement
-      )}
-      <Text className={`${prefixCls}-text`}>{childrenElement}</Text>
-      <Text className={`${prefixCls}-mask`} />
+      <View className={`${prefixCls}-content`}>
+        {loading ? (
+          <View className={`${prefixCls}-loading-icon`}>
+            <Loading color={loadingColor} style={{ verticalAlign: '-0.3em' }} />
+          </View>
+        ) : (
+          iconElement
+        )}
+        <Text className={`${prefixCls}-text`}>{childrenElement}</Text>
+        <Text className={`${prefixCls}-mask`} />
+      </View>
     </Button>
   );
 };

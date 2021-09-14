@@ -5,8 +5,8 @@ import { isDef, isNumeric } from './validate';
  * @Author: codingfly
  * @Description:
  * @Date: 2021-08-04 14:52:05
- * @LastEditTime: 2021-08-18 16:23:24
- * @FilePath: \young\src\_utils\utils.ts
+ * @LastEditTime: 2021-09-14 08:53:26
+ * @FilePath: \my-remax-ui\components\_utils\utils.ts
  */
 export interface Obj {
   [key: string]: any;
@@ -210,6 +210,8 @@ export const deepClone = function (data: any): any {
   }
   return cloneData;
 };
+
+export const extend = Object.assign;
 
 export function addUnit(value?: string | number): string | undefined {
   if (!isDef(value)) {

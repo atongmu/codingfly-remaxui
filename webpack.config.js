@@ -113,7 +113,7 @@ const config = {
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new MiniCssExtractPlugin({ filename: '[name].css' }),
     new WebpackBar({
-      name: ' 🎸  RemaxUi',
+      name: ' @codingfly/RemaxUi',
       color: '#108ee9',
     }),
     new BundleAnalyzerPlugin({
